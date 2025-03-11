@@ -1,7 +1,11 @@
 Exercise 00			: Sum of Digits
+<br>
 Files to turn-in	: Program.java
+<br>
 Allowed				: Input/Output	: System.out
+<br>
 					  Types			: Primitive types
+<br>
 					  Operators		: Standard operations of primitive types
 ------------------------------------------------------
 
