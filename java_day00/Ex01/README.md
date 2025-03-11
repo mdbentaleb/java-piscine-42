@@ -1,4 +1,4 @@
-|Exercise 01: Really Prime Number||
+|Exercise 01 | Really Prime Number|
 |------|------|
 | Turn-in directory |	ex01 |
 | Files to turn-in |	Program.java |
