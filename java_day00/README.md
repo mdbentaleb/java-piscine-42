@@ -2,11 +2,11 @@ Exercise 00			: Sum of Digits
 <br>
 Files to turn-in	: Program.java
 <br>
-Allowed				: Input/Output	: System.out
+Allowed				: Input/Output  : System.out
 <br>
-					  Types			: Primitive types
+                      Types         : Primitive types
 <br>
-					  Operators		: Standard operations of primitive types
+                      Operators     : Standard operations of primitive types
 ------------------------------------------------------
 
 Java is a strictly typed programming language. Fundamental data types (boolean, character, integer, floating point number) are represented in Java by eight primitive types: boolean, char, byte, short, int, long, float, double.
