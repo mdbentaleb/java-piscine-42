@@ -1,5 +1,3 @@
-#Exercise 00: Sum of Digits
-
 |Exercise 00: Sum of Digits||
 |------|------|
 | Turn-in directory | ex00 |
