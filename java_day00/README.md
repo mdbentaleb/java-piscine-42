@@ -17,6 +17,6 @@ Calculate the sum of digits of a six-digit int number (the number value is set d
 Example of the program operation for number 479598:
 
 ```bash
-	$> java Program
-	42
+$> java Program
+42
 ```
