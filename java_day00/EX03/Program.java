@@ -48,8 +48,9 @@ public class Program {
 				if (value < minScore)
 					minScore = value;
 
-				result = "Week " + curWeek + " " + "=".repeat(minScore) + ">\n";
 			}
+
+			result += "Week " + curWeek + " " + "=".repeat(minScore) + ">";
 		}
 		System.out.println(result);
 		scn.close();
