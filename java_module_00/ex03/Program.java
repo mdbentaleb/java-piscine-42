@@ -6,29 +6,28 @@ public class Program {
 
 	private static long reverse(long n) {
 
-    long rev = 0;
+		long rev = 0;
 
-    while (n != 0) {
-        rev = (rev * 10) + (n % 10);
-        n /= 10;
-    }
+		while (n != 0) {
+			rev = (rev * 10) + (n % 10);
+			n /= 10;
+		}
 
-    return rev;
-}
+		return rev;
+	}
 
-
-	private static void	printGraph(long storage) {
-		int		week = 1;
-		long	tmp = reverse(storage);
-
+	private static void printGraph(long storage) {
+		int week = 1;
+		long tmp = reverse(storage);
 
 		while (tmp != 0) {
-			int grade = (int)(tmp % 10);
+			int grade = (int) (tmp % 10);
 
 			System.out.print("Week " + week + " ");
 
-			for (int i = 0; i < grade; i++)
+			for (int i = 0; i < grade; i++) {
 				System.out.print("=");
+			}
 
 			System.out.println(">");
 
@@ -37,26 +36,27 @@ public class Program {
 		}
 	}
 
-    public static void main(String[] args) {
+	public static void main(String[] args) {
 
-        Scanner scan = new Scanner(System.in);
-		int		expectedWeek = 1;
-		long	storage = 0;
+		Scanner scan = new Scanner(System.in);
+		int expectedWeek = 1;
+		long storage = 0;
 
-        for (int i = 0; i < 18; i++) {
+		for (int i = 0; i < 18; i++) {
 			System.out.print("-> ");
 
-			String	week = scan.next();
+			String week = scan.next();
 
-			if (week.equals("42"))
+			if (week.equals("42")) {
 				break;
+			}
 
 			if (!week.equals("Week")) {
 				System.err.println("IllegalArgument");
 				System.exit(-1);
 			}
 
-			int		weekNbr = scan.nextInt();
+			int weekNbr = scan.nextInt();
 
 			if (weekNbr != expectedWeek) {
 				System.err.println("IllegalArgument");
@@ -67,17 +67,18 @@ public class Program {
 
 			System.out.print("-> ");
 			for (int j = 0; j < 5; j++) {
-				int	testGrade = scan.nextInt();
+				int testGrade = scan.nextInt();
 
-				if (testGrade < min)
+				if (testGrade < min) {
 					min = testGrade;
+				}
 			}
 
 			storage = (storage * 10) + min;
 
 			expectedWeek++;
-        }
+		}
 
 		printGraph(storage);
-    }
+	}
 }
