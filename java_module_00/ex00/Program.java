@@ -4,18 +4,13 @@ public class Program {
 
 	public static void main(String[] args) {
 		int nbr = 479598;
-		int cont = 0;
-		int tmp = 1;
+		int sum = 0;
 
 		while (nbr != 0) {
-			tmp = nbr % 10;
-
-			if (tmp > 0) {
-				cont += tmp;
-				nbr /= 10;
-			}
+			sum += nbr % 10;
+			nbr /= 10;
 		}
 
-		System.out.println(cont);
+		System.out.println(sum);
 	}
 }
