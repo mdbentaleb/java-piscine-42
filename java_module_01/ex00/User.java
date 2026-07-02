@@ -1,23 +1,32 @@
 package java_module_01.ex00;
 
-
 public class User {
 
+	private static Integer nextId = 1; 
 	private Integer identifier;
 	private String name;
 	private Integer balance;
 
 
-	public User(Integer id, String name, Integer balance) {
-		this.identifier = id;
+	public User(String name, Integer balance) {
+		this.identifier = nextId++;
 		this.name = name;
 		this.balance = balance;
 	}
+
+	public void setBalanace(Integer balance) { this.balance = balance; }
 
 	public Integer getId() { return this.identifier; }
 	public String getName() { return this.name; }
 	public Integer getBalance() { return this.balance; }
 
-	public void setName(String name) { this.name = name; }
-	public void setBalanace(Integer balance) { this.balance = balance; }
+	public String showInfo() {
+
+		String format = "User: \nID: %s\nName: %s\nBalance: %d\n";
+
+		return String.format(format,
+							getId(),
+							getName(),
+							getBalance());
+	}
 }

@@ -2,41 +2,46 @@ package java_module_01.ex00;
 
 import java.util.UUID;
 
-enum TransferCateg {
-	debits,
-	credits
-}
-
 
 public class Transaction {
+
+	public enum TransferCateg {
+		debits,
+		credits
+	}
+
 	private String identifier;
 	private User recipient;
 	private User sender;
 	private TransferCateg transferCategory;
-	private Integer transferAmount;
+	private Integer amount;
 
 
-	public Transaction(User recipient, User sender, TransferCateg transferCategory, Integer transferAmount) {
+	public Transaction(User sender, User recipient, Integer amount) {
 		this.identifier = UUID.randomUUID().toString();
 		this.recipient = recipient;
 		this.sender = sender;
-		this.transferCategory = transferCategory;
-		this.transferAmount = transferAmount;
+		this.transferCategory = amount < 0 ? TransferCateg.debits : TransferCateg.credits;
+		this.amount = amount;
+
+		sender.setBalanace(sender.getBalance() - amount);
+		recipient.setBalanace(recipient.getBalance() + amount);
 	}
 
+	public String getIdentifier() { return this.identifier; }
+	public User getRecipient() { return this.recipient; }
+	public User getSender() { return this.sender; }
+	public TransferCateg getTransferCateg() { return this.transferCategory; }
+	public Integer getAmount() { return this.amount; }
 
-	private void validateTransaction(TransferCateg transCateg, Integer transAmount) {
-		if (sender.getBalance() <= 0)
-			throw new IllegalArgumentException("Insufficient balance: { " + sender.getBalance() + "}");
+	public String showTransaction() {
+		String format = "ID: %s\nSender: %s\nRecepient: %s\nCategory: %s\nAmount: %d\n";
 
-		if (transCateg == TransferCateg.debits && transAmount >= 0)
-			throw new IllegalArgumentException("Debits must be negative");
-
-		if (transCateg == TransferCateg.credits && transAmount <= 0)
-			throw new IllegalArgumentException("Credits must be positive");
-
-		if (sender.getBalance() + transAmount < 0) {
-            throw new IllegalArgumentException("Insufficient balance");
-        }
+		return String.format(format, 
+							getIdentifier(),
+							getSender().getName(),
+							getRecipient().getName(),
+							getTransferCateg(),
+							getAmount());
 	}
 }
