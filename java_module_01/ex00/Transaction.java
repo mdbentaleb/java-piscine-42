@@ -35,7 +35,7 @@ public class Transaction {
 	public Integer getAmount() { return this.amount; }
 
 	public String showTransaction() {
-		String format = "ID: %s\nSender: %s\nRecepient: %s\nCategory: %s\nAmount: %d\n";
+		String format = "Transaction:\n   ID: %s\n   Sender: %s\n   Recepient: %s\n   Category: %s\n   Amount: %d\n";
 
 		return String.format(format, 
 							getIdentifier(),

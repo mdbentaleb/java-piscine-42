@@ -22,7 +22,7 @@ public class User {
 
 	public String showInfo() {
 
-		String format = "User: \nID: %s\nName: %s\nBalance: %d\n";
+		String format = "User: \n   ID: %s\n   Name: %s\n   Balance: %d\n";
 
 		return String.format(format,
 							getId(),
